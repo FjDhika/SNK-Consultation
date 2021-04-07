@@ -3,10 +3,13 @@ import {
   Column,
   CreateDateColumn,
   Entity,
+  JoinTable,
+  ManyToMany,
   PrimaryGeneratedColumn,
   Unique,
   UpdateDateColumn,
 } from "typeorm";
+import { Appointment } from "./appointment";
 
 @Entity()
 @Unique(["id"])
@@ -33,4 +36,8 @@ export class Doctor {
   @Column()
   @UpdateDateColumn()
   updatedAt: Date;
+
+  @ManyToMany(() => Appointment, (appointment) => appointment.doctor)
+  @JoinTable()
+  appointments?: Appointment;
 }
