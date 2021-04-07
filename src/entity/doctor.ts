@@ -1,3 +1,4 @@
+import { IsNotEmpty } from "class-validator";
 import {
   Column,
   CreateDateColumn,
@@ -14,13 +15,16 @@ export class Doctor {
   id: string;
 
   @Column()
-  name: string;
+  @IsNotEmpty()
+  name!: string;
 
   @Column()
-  description: string;
+  @IsNotEmpty()
+  description!: string;
 
   @Column()
-  photo: string;
+  @IsNotEmpty()
+  photo!: string;
 
   @Column()
   @CreateDateColumn()

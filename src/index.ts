@@ -5,11 +5,14 @@ import * as cors from "cors";
 import * as helmet from "helmet";
 import { dbConfig } from "./config/database.config";
 import router from "./routes";
+import { seed } from "../seeder";
 
 createConnection(dbConfig)
   .then(async (connection) => {
     // create express app
     const app = express();
+
+    await seed();
 
     // middlewares
     app.use(cors());
