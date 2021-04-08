@@ -2,6 +2,7 @@ import { IsNotEmpty } from "class-validator";
 import {
   Column,
   Entity,
+  JoinTable,
   ManyToMany,
   PrimaryGeneratedColumn,
   Unique,
@@ -15,7 +16,7 @@ export class Appointment {
   id?: string;
 
   @ManyToMany(() => Doctor, (doctor) => doctor.appointments)
-  doctor!: Doctor;
+  doctors!: Doctor[];
 
   @Column()
   @IsNotEmpty()

@@ -37,7 +37,7 @@ export class Doctor {
   @UpdateDateColumn()
   updatedAt: Date;
 
-  @ManyToMany(() => Appointment, (appointment) => appointment.doctor)
+  @ManyToMany(() => Appointment, (appointment) => appointment.doctors)
   @JoinTable()
-  appointments?: Appointment;
+  appointments?: Appointment[];
 }
