@@ -35,7 +35,7 @@ export class DoctorController {
       });
     }
 
-    const doctor = await getRepository(Doctor).find({
+    const doctor = await getRepository(Doctor).findOne({
       where: {
         id: doctorId,
       },

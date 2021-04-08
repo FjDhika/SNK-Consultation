@@ -12,7 +12,7 @@ createConnection(dbConfig)
     // create express app
     const app = express();
 
-    // await seed();
+    await seed();
 
     // middlewares
     app.use(cors());

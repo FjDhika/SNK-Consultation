@@ -9,9 +9,9 @@ router.get("/", (req: Request, res: Response) =>
   res.status(200).send("SNK Consultation API")
 );
 
-router.get("/search", DoctorController.searchDoctor);
+router.get("/api/search", DoctorController.searchDoctor);
 
-router.get("/doctor", DoctorController.detailDoctor);
+router.get("/api/doctor", DoctorController.detailDoctor);
 
-router.post("/appointment", AppointmentController.createAppointment);
+router.post("/api/appointment", AppointmentController.createAppointment);
 export default router;
